@@ -1,0 +1,33 @@
+h1
+{
+  font-size: 4em;
+  text-align: center;
+}
+
+
+body
+{
+  background-color: #8dd9dd;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+
+.div
+{
+  display: flex;
+  justify-content: center;
+}
+
+input
+{
+  padding: 1%;
+  margin: 1%;
+}
+
+button
+{
+  padding: 1%;
+  margin: 1%;
+}
