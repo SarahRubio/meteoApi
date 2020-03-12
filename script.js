@@ -19,13 +19,12 @@
 // });
 
 
-let ville = 'Paris';
 let token = '8780505298cf5464c2cfb5a8e9b826243f26d27374fe10c460ccb4882d901d7c';
 
 document.querySelector('.obtenir-temperature').addEventListener('click', function () {
-  ville = document.querySelector('.ville').value;
+  let ville = document.querySelector('.ville').value;
   $.get( `https://api.meteo-concept.com/api/location/cities?token=${token}&search=${ville}` , function(reponse) {
-    codeInsee = `${reponse.city}`
+    codeInsee = reponse.cities[0].insee
     $.get(`https://api.meteo-concept.com/api/forecast/daily/0?token=${token}&insee=${codeInsee}`, function(reponse) {
         document.querySelector('.temperature').value = `${reponse.forecast.tmax}°C`;
     });
